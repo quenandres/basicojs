@@ -5,7 +5,7 @@ var articulos = [
     { nombre: "Celular", costo: 1300 }, 
     { nombre: "Laptop", costo: 50000}, 
     { nombre: "Teclado", costo: 4511}, 
-    { nombre: "Audifonos", costo: 4500 }, 
+    { nombre: "Audifonos", costo: 500 }, 
     { nombre: "Mouse", costo: 3200 }, 
     { nombre: "Monitor", costo: 5000 }, 
 ]
@@ -18,4 +18,19 @@ var articulosFiltrados = articulos.filter(function(articulo){
 // Recorre los articulos y trae el nombre unicamente en este ejemplo
 var nombreArticulos = articulos.map(function(articulo){
     return articulo.nombre;
+});
+
+// Nos retorna el objeto que si coincide y descarta los demas
+var encuentraArticulo = articulos.find(function(articulo){
+    return articulo.nombre === "Laptop";
+});
+
+// Recorre el array de objetos y nos retorna el valor de cada uno
+articulos.forEach(function(articulo){
+    console.log(articulo.nombre);
+});
+
+//Esta funcion simplemente nos retorna un true si alguna de las iteraciones cumplio
+var articulosBaratos = articulos.some(function(articulo){
+    return articulo.costo <= 700;
 });
